@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.top-border {
+  height: 6px;
+  background: linear-gradient(to right, #007BFF, #00c896);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #003366;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.benefits ul, .process ol {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.benefits li::marker {
+  color: #00c896;
+}
+
+.process li::marker {
+  color: #007BFF;
+}
+
+.cta {
+  background-color: #f0fbf7;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #d9f2ec;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1da851;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #aaa;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimento | Detailing PT</title>
+    <link rel="stylesheet" href="polimento(style).css">
+</head>
+<script>
+    const lightboxLinks = document.querySelectorAll('.lightbox');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    lightboxLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            lightboxImg.src = this.href;
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none';
+        lightboxImg.src = '';
+    });
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay || e.target === lightboxImg) {
+            lightboxOverlay.style.display = 'none';
+            lightboxImg.src = '';
+        }
+    });
+</script>
+
+<body>
+    <header>
+        <h1>Polimento de Pintura Automotiva</h1>
+        <p>Restaure o brilho original do seu carro com os nossos serviços profissionais</p>
+    </header>
+
+    <section class="intro">
+        <img src="polish(car).png" alt="Carro com pintura polida">
+        <h2>O que é o Polimento de Pintura?</h2>
+        <p>O polimento é um processo técnico que remove imperfeições da pintura, como riscos leves, marcas de água, oxidação e pequenos arranhões. Utilizamos máquinas e produtos profissionais para garantir acabamento de alto nível e brilho intenso.</p>
+    </section>
+
+    <section class="benefits">
+        <h2>Vantagens do Polimento Profissional</h2>
+        <ul>
+            <li><strong>Brilho intenso:</strong> Devolve o aspecto de carro novo à pintura.</li>
+            <li><strong>Remoção de imperfeições:</strong> Elimina micro-riscos, manchas e swirls.</li>
+            <li><strong>Proteção adicional:</strong> Aplicação de ceras ou selantes após o polimento protege contra raios UV e sujeira.</li>
+            <li><strong>Valorização do veículo:</strong> Ideal para quem pretende vender ou apenas cuidar do visual.</li>
+            <li><strong>Resultados imediatos:</strong> Melhora perceptível logo após o serviço.</li>
+        </ul>
+    </section>
+    <section class="gallery">
+    <h2>Veja nossos resultados</h2>
+    <div class="gallery-container">
+        <a href="result-1.png" class="lightbox">
+            <img src="result-1.png" alt="Depois do polimento">
+        </a>
+        <a href="result-2.png" class="lightbox">
+            <img src="result-2.png" alt="Depois do polimento">
+        </a>
+        <a href="result-3.png" class="lightbox">
+            <img src="result-3.png" alt="Depois do polimento">
+        </a>
+        <a href="result-4.png" class="lightbox">
+            <img src="result-4.png" alt="Depois do polimento">
+        </a>
+    </div>
+</section>
+
+<div id="lightbox-overlay">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
+    <section class="cta">
+        <h2>Por que escolher a Detailing PT?</h2>
+        <p>Utilizamos tecnologia de ponta, produtos premium e atenção aos detalhes para oferecer um serviço de excelência. Seu carro merece o melhor cuidado!</p>
+        <a href="https://wa.me/351923509879" target="_blank" class="whatsapp-button">Agende agora pelo WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Detailing PT. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
