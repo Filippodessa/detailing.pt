@@ -153,3 +153,49 @@ footer {
     background-color: rgba(255, 255, 255, 1);
 }
 
+.limpezaLeve, 
+.limpezaCompleta {
+    max-width: 800px;
+    margin: 40px auto;         /* отступ сверху и снизу */
+    padding: 30px 25px;
+    background-color: #ffffff; /* белый фон */
+    border: 2px solid #e0e0e0; /* рамка */
+    border-radius: 12px;       /* скругление углов */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* мягкая тень */
+    text-align: left;          /* выравнивание по левому краю */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.limpezaLeve:hover, 
+.limpezaCompleta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    border-color: #007BFF; /* подсветка при наведении */
+}
+
+.limpezaLeve h2 {
+    color: #007BFF;   /* синий акцент */
+    margin-bottom: 15px;
+}
+
+.limpezaCompleta h2 {
+    color: #28a745;   /* зелёный акцент */
+    margin-bottom: 15px;
+}
+
+.limpezaLeve ul li,
+.limpezaCompleta ul li {
+    margin: 8px 0;
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.limpezaLeve ul li::before,
+.limpezaCompleta ul li::before {
+    content: \"✔\"; 
+    color: #25D366; /* зелёная галочка */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Automotivo | Detailing PT</title>
+    <link rel="stylesheet" href="diagnostico(new).css">
+</head>
+<script>
+    const lightboxLinks = document.querySelectorAll('.lightbox');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    lightboxLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            lightboxImg.src = this.href;
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none';
+        lightboxImg.src = '';
+    });
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay || e.target === lightboxImg) {
+            lightboxOverlay.style.display = 'none';
+            lightboxImg.src = '';
+        }
+    });
+</script>
+
+<body>
+    <header>
+        <h1>Diagnóstico Eletrônico e Remoção de Erros</h1>
+        <p>Detectamos e resolvemos falhas ocultas no seu carro com precisão profissional.</p>
+    </header>
+
+    <section class="intro">
+        <img src="diag1.png" alt="Carro com pintura polida">
+        <h2>🔍 O que é diagnóstico eletrônico?</h2>
+        <p>O diagnóstico eletrônico é o processo de análise dos sistemas internos do veículo com o auxílio de ferramentas computadorizadas. Ele permite identificar falhas no motor, câmbio, ABS, airbag, sistema de injeção, entre outros.</p>
+    </section>
+
+    <section class="benefits">
+        <h2>✅ Benefícios do diagnóstico:</h2>
+        <ul>
+            <li><strong>✔ Identificação rápida de problemas ocultos</strong></li>
+            <li><strong>✔ Prevenção de falhas maiores e custos futuros</strong></li>
+            <li><strong>✔ Economia de tempo na manutenção</strong></li>
+            <li><strong>✔ Reset de luzes no painel (check engine, airbag etc.)</strong></li>
+            <li><strong>✔ Acompanhamento após consertos</strong></li>
+        </ul>
+    </section>
+
+<div id="lightbox-overlay">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
+    <section class="cta">
+        <h2>Por que escolher a Detailing PT?</h2>
+        <p>Utilizamos tecnologia de ponta, produtos premium e atenção aos detalhes para oferecer um serviço de excelência. Seu carro merece o melhor cuidado!</p>
+        <a href="https://wa.me/351923509879" target="_blank" class="whatsapp-button">Agende agora pelo WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Detailing PT. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

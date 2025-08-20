@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpeza | Detailing PT</title>
+    <link rel="stylesheet" href="limpeza(new).css">
+</head>
+<script>
+    const lightboxLinks = document.querySelectorAll('.lightbox');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    lightboxLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            lightboxImg.src = this.href;
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none';
+        lightboxImg.src = '';
+    });
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay || e.target === lightboxImg) {
+            lightboxOverlay.style.display = 'none';
+            lightboxImg.src = '';
+        }
+    });
+</script>
+
+<body>
+    <header>
+        <h1>Higienização Interna de Veículos</h1>
+        <p>Cuidamos do interior do seu carro com máxima atenção aos detalhes.</p>
+    </header>
+
+    <section class="intro">
+        <video src="limpeza1.mp4" controls autoplay muted loop style="max-width:100%; border-radius:10px;"></video>
+        <h2>O que é a Limpeza Interna de Veículos?</h2>
+        <p>Higienização interior (ou limpeza a seco do interior do automóvel) — é um processo de limpeza profunda de todas as partes do habitáculo: estofos, carpetes, teto, painéis de portas, cintos de segurança, plásticos e até áreas de difícil acesso.
+Utilizam-se produtos específicos e equipamentos adequados para remover sujidade, manchas, odores, bactérias e ácaros, deixando o interior do carro limpo, higienizado e com um ambiente mais saudável e agradável.</p>
+    </section>
+
+    <section class="limpezaLeve">
+        <h2>💧 Limpeza Leve</h2>
+        <p>A limpeza leve é ideal para manutenção frequente. Indicada para veículos em bom estado geral que precisam apenas de uma renovação básica da aparência e do cheiro interno.</p>
+        <ul>
+            <li><strong>✔ Aspiração completa do interior</strong></li>
+            <li><strong>✔ Limpeza superficial dos plásticos, painel e portas</strong></li>
+            <li><strong>✔ Higienização leve dos tapetes</strong></li>
+            <li><strong>✔ Aplicação de aromatizante</strong></li>
+            <li><strong>✔ Duração média: 1h a 2h</strong></li>
+            <li><strong>✔ Excelente custo-benefício para uso regular</strong></li>
+        </ul>
+    </section>
+
+    <section class="limpezaCompleta">
+        <h2>🧼 Limpeza Completa</h2>
+        <p>Recomendada para veículos com sujeiras mais profundas, manchas, odores ou após longos períodos sem limpeza. Uma verdadeira restauração do interior.</p>
+        <ul>
+            <li><strong>✔ Desmontagem parcial dos bancos (se necessário)</strong></li>
+            <li><strong>✔ Lavagem profunda dos estofados e teto</strong></li>
+            <li><strong>✔ Limpeza técnica de plásticos, volante, console e saídas de ar</strong></li>
+            <li><strong>✔ Lavagem dos tapetes com extratora</strong></li>
+            <li><strong>✔ Higienização do porta-malas</strong></li>
+            <li><strong>✔ Remoção de manchas e odores</strong></li>
+            <li><strong>✔ Duração média: 4h a 6h</strong></li>
+            <li><strong>✔ Ideal para venda ou renovação completa</strong></li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+    <h2>Veja nossos resultados</h2>
+    <div class="gallery-container">
+        <video src="limpeza2.mp4" controls muted loop style="max-width:100%; border-radius:10px;"></video>
+        <video src="limpeza3.mp4" controls muted loop style="max-width:100%; border-radius:10px;"></video>
+        <video src="limpeza4.mp4" controls muted loop style="max-width:100%; border-radius:10px;"></video>
+        <video src="limpeza5.mp4" controls muted loop style="max-width:100%; border-radius:10px;"></video>
+    </div>
+    </section>
+
+    <div id="lightbox-overlay">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <section class="cta">
+        <h2>Por que escolher a Detailing PT?</h2>
+        <p>Utilizamos tecnologia de ponta, produtos premium e atenção aos detalhes para oferecer um serviço de excelência. Seu carro merece o melhor cuidado!</p>
+        <a href="https://wa.me/351923509879" target="_blank" class="whatsapp-button">Agende agora pelo WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Detailing PT. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
