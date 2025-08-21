@@ -77,40 +77,6 @@ p {
     color: #555;
 }
 
-
-
-.btn {
-    display: inline-block;
-    margin: 10px 15px;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.instagram {
-    background-color: #e4405f;
-}
-.instagram:hover {
-    background-color: #cc3752;
-}
-
-.facebook {
-    background-color: #3b5998;
-}
-.facebook:hover {
-    background-color: #2d4373;
-}
-
-.whatsapp {
-    background-color: #25D366;
-}
-.whatsapp:hover {
-    background-color: #1da851;
-}
-
 footer {
     margin-top: 40px;
     font-size: 0.9rem;
@@ -123,4 +89,50 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Общие стили кнопок */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Эффект при наведении */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Instagram */
+.instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+/* Facebook */
+.facebook {
+    background: #1877f2;
+}
+
+/* WhatsApp */
+.whatsapp {
+    background: #25D366;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .btn {
+        width: 90%;
+        font-size: 14px;
+    }
 }
