@@ -171,22 +171,168 @@ footer {
     border-color: #007BFF; 
 }
 
-.benefits h2 {
-    color: #007BFF;   
-    margin-bottom: 15px;
+/* Общие настройки для секций */
+.intro, 
+.benefits, 
+.cta {
+    max-width: 800px;       /* ограничение ширины на больших экранах */
+    margin: 20px auto;      /* центрирование секций */
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9f9f9;    /* лёгкий фон */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Заголовки внутри секций */
+.intro h2,
+.benefits h2,
+.cta h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Текст */
+.intro p,
+.benefits p,
+.cta p {
+    line-height: 1.6;
+}
+
+/* Картинка в intro */
+.intro img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Кнопка WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .intro, 
+    .benefits, 
+    .cta {
+        max-width: 90%;   /* не во весь экран */
+        padding: 15px;
+    }
+
+    .intro h2,
+    .benefits h2,
+    .cta h2 {
+        font-size: 1.2rem;
+    }
+
+    .intro p,
+    .benefits ul li,
+    .cta p {
+        font-size: 0.95rem;
+    }
+}
+
+.benefits ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
 .benefits ul li {
-    margin: 8px 0;
-    list-style: none;
-    position: relative;
-    padding-left: 25px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.benefits ul li::before {
-    content: "✔"; 
-    color: #25D366; 
-    position: absolute;
-    left: 0;
+.benefits ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Иконки */
+.benefits ul li .icon {
+    font-size: 2rem;
+}
+
+/* Секция CTA без рамки */
+.cta {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #e6f9ee; /* светло-зелёный фон */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* Заголовок */
+.cta h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+/* Текст */
+.cta p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Кнопка WhatsApp */
+.cta .whatsapp-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25D366; /* зелёная кнопка */
+    color: #fff;
+    border-radius: 10px;
     font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta .whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+    .cta {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .cta h2 {
+        font-size: 1.3rem;
+    }
+    .cta p {
+        font-size: 0.95rem;
+    }
+    .cta .whatsapp-button {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
 }

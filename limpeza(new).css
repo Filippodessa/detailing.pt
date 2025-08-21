@@ -199,3 +199,46 @@ footer {
     left: 0;
     font-weight: bold;
 }
+
+/* Общий стиль для секций Limpeza */
+.limpezaLeve, 
+.limpezaCompleta {
+    max-width: 800px;      /* ограничение ширины на больших экранах */
+    margin: 20px auto;     /* центрируем секцию */
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9f9f9;   /* лёгкий фон для выделения */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Заголовки */
+.limpezaLeve h2,
+.limpezaCompleta h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Для списка */
+.limpezaLeve ul,
+.limpezaCompleta ul {
+    padding-left: 20px;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 600px) {
+    .limpezaLeve, 
+    .limpezaCompleta {
+        max-width: 90%;     /* не во весь экран */
+        padding: 15px;
+    }
+
+    .limpezaLeve h2,
+    .limpezaCompleta h2 {
+        font-size: 1.2rem;
+    }
+
+    .limpezaLeve ul li,
+    .limpezaCompleta ul li {
+        font-size: 0.95rem;
+    }
+}
