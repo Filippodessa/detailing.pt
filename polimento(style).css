@@ -153,3 +153,83 @@ footer {
     background-color: rgba(255, 255, 255, 1);
 }
 
+/* По умолчанию кнопка скрыта (ПК) */
+.btn.call {
+  display: none;
+}
+
+/* Call */
+.btn.call {
+    background-image: linear-gradient(45deg,
+        #28a745,
+        #218838,
+        rgb(25,100,42)
+    );
+}
+
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    .btn.call {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: -80px; /* прячем за экраном */
+        right: 20px;
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 45px;
+        background: linear-gradient(45deg, #28a745, #218838); /* такой же стиль, как соцсети */
+        background-size: 200% 200%;
+        animation: gradientMove 6s ease infinite;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        transition: bottom 0.6s ease, opacity 0.6s ease;
+        opacity: 0;
+
+        /* 🔹 Пульсация */
+        animation: pulse 2s infinite;
+
+        /* Анимация появления */
+        transition: bottom 0.6s ease, opacity 0.6s ease;
+        opacity: 0;
+    }
+
+    /* Скрываем текст на мобильных */
+    .btn.call .call-text {
+        display: none;
+    }
+
+    /* Активное состояние */
+    .btn.call.show {
+        bottom: 20px; /* поднимается наверх */
+        opacity: 1;
+    }
+
+    /* 🔹 Анимация пульсации */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+        }
+    }
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polimento | Detailing PT</title>
     <link rel="stylesheet" href="polimento(style).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <script>
     const lightboxLinks = document.querySelectorAll('.lightbox');
@@ -87,5 +88,20 @@
     <footer>
         <p>&copy; 2025 Detailing PT. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+    document.addEventListener("scroll", function() {
+    const callBtn = document.querySelector(".btn.call");
+        if (window.scrollY > 100) { 
+        callBtn.classList.add("show"); // показать после 100px скролла
+        } else {
+        callBtn.classList.remove("show"); // скрыть наверх
+        }
+    });
+    </script>
+
+    <a href="tel:+351923509879" class="btn call">
+        <i class="fas fa-phone"></i> <span class="call-text">Ligar</span>
+    </a>
 </body>
 </html>
