@@ -224,28 +224,6 @@ footer {
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
-/* Адаптив */
-@media (max-width: 600px) {
-    .intro, 
-    .benefits, 
-    .cta {
-        max-width: 90%;   /* не во весь экран */
-        padding: 15px;
-    }
-
-    .intro h2,
-    .benefits h2,
-    .cta h2 {
-        font-size: 1.2rem;
-    }
-
-    .intro p,
-    .benefits ul li,
-    .cta p {
-        font-size: 0.95rem;
-    }
-}
-
 .benefits ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -319,8 +297,31 @@ footer {
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
+/* По умолчанию кнопка скрыта (ПК) */
+.btn.call {
+  display: none;
+}
+
 /* Адаптив для мобильных */
 @media (max-width: 768px) {
+    .intro, 
+    .benefits, 
+    .cta {
+        max-width: 90%;   /* не во весь экран */
+        padding: 15px;
+    }
+
+    .intro h2,
+    .benefits h2,
+    .cta h2 {
+        font-size: 1.2rem;
+    }
+
+    .intro p,
+    .benefits ul li,
+    .cta p {
+        font-size: 0.95rem;
+    }
     .cta {
         max-width: 90%;
         padding: 20px;
@@ -336,9 +337,9 @@ footer {
         font-size: 0.95rem;
     }
     .btn.call {
-    display: inline-flex;
+    display: flex;
     position: fixed;
-    bottom: 20px;
+    bottom: -80px; /* прячем за экраном */
     right: 20px;
     z-index: 9999;
     padding: 16px;
@@ -350,42 +351,30 @@ footer {
     align-items: center;
     color: #fff;
     text-decoration: none;
-
     background-image: linear-gradient(45deg,
-        rgb(40,167,69),
-        rgb(33,136,56),
-        rgb(25,100,42)
+      rgb(40,167,69),
+      rgb(33,136,56),
+      rgb(25,100,42)
     );
     background-size: 200% 200%;
-    background-position: 0% 50%;
-
-    /* 🔹 Анимация градиента и пульсации */
-    animation: pulse 2s infinite, gradientMove 6s ease infinite;
+    animation: gradientMove 6s ease infinite;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    /* Анимация появления */
+    transition: bottom 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
   }
 
-  /* Скрываем текст, оставляем только иконку 📞 */
-  .btn.call .call-text {
-    display: none;
+  /* Активное состояние */
+  .btn.call.show {
+    bottom: 20px; /* поднимается наверх */
+    opacity: 1;
   }
 }
 
-/* По умолчанию скрыта на ПК */
-.btn.call {
-  display: none;
-}
-
-/* 🔹 Анимация пульсации */
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(40,167,69, 0.7); }
-  70%  { box-shadow: 0 0 0 15px rgba(40,167,69, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(40,167,69, 0); }
-}
-
-/* 🔹 Анимация движения градиента */
+/* 🔹 Движение градиента */
 @keyframes gradientMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
