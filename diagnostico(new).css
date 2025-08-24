@@ -320,7 +320,7 @@ footer {
 }
 
 /* Адаптив для мобильных */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .cta {
         max-width: 90%;
         padding: 20px;
@@ -335,4 +335,57 @@ footer {
         padding: 10px 16px;
         font-size: 0.95rem;
     }
+    .btn.call {
+    display: inline-flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 22px;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+
+    background-image: linear-gradient(45deg,
+        rgb(40,167,69),
+        rgb(33,136,56),
+        rgb(25,100,42)
+    );
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+
+    /* 🔹 Анимация градиента и пульсации */
+    animation: pulse 2s infinite, gradientMove 6s ease infinite;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  /* Скрываем текст, оставляем только иконку 📞 */
+  .btn.call .call-text {
+    display: none;
+  }
 }
+
+/* По умолчанию скрыта на ПК */
+.btn.call {
+  display: none;
+}
+
+/* 🔹 Анимация пульсации */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(40,167,69, 0.7); }
+  70%  { box-shadow: 0 0 0 15px rgba(40,167,69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40,167,69, 0); }
+}
+
+/* 🔹 Анимация движения градиента */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
