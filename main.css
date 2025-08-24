@@ -91,14 +91,6 @@ footer {
     margin-right: auto;
 }
 
-/* Адаптив */
-@media (max-width: 600px) {
-    .btn {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-}
-
 .links {
     display: flex;
     justify-content: center;
@@ -116,43 +108,95 @@ footer {
     text-decoration: none;
     font-weight: bold;
     color: #fff;
-    transition: transform 0.2s, background 0.3s;
     font-size: 16px;
+
+    /* для анимации */
+    background-image: linear-gradient(45deg,#444,#666); /* фолбэк, будет переопределён ниже */
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    animation: gradientMove 6s ease infinite;
+    will-change: background-position;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-}
+.btn:hover { transform: scale(1.05); }
 
-/* 🔹 Индивидуальные цвета */
+/* Instagram */
 .btn.instagram {
-    background: #E4405F;
+    background-image: linear-gradient(45deg,
+        rgb(245,133,41),
+        rgb(253,29,29),
+        rgb(193,53,132),
+        rgb(131,58,180)
+    );
 }
 
-.btn.instagram:hover {
-    background: #c32e4d;
-}
-
+/* Facebook */
 .btn.facebook {
-    background: #1877F2;
+    background-image: linear-gradient(45deg,
+        rgb(24,119,242),
+        rgb(11,87,191),
+        rgb(0,68,168)
+    );
 }
 
-.btn.facebook:hover {
-    background: #0f5bb5;
-}
-
+/* WhatsApp */
 .btn.whatsapp {
-    background: #25D366;
+    background-image: linear-gradient(45deg,
+        rgb(37,211,102),
+        rgb(30,190,87),
+        rgb(20,150,65)
+    );
 }
 
-.btn.whatsapp:hover {
-    background: #1ebe57;
-}
-
+/* Call */
 .btn.call {
-    background: #28a745;
+    background-image: linear-gradient(45deg,
+        rgb(40,167,69),
+        rgb(33,136,56),
+        rgb(25,100,42)
+    );
 }
 
-.btn.call:hover {
-    background: #218838;
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Адаптация для телефона */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    .btn.call {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        padding: 14px 22px;
+        font-size: 18px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+        /* 🔹 Пульсация */
+        animation: pulse 2s infinite;
+    }
+    /* Скрываем текст на мобильных */
+    .btn.call .call-text {
+        display: none;
+    }
+
+    /* 🔹 Анимация пульсации */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+        }
+    }
 }
