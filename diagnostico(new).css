@@ -305,8 +305,8 @@ footer {
 /* Call */
 .btn.call {
     background-image: linear-gradient(45deg,
-        rgb(40,167,69),
-        rgb(33,136,56),
+        #28a745,
+        #218838,
         rgb(25,100,42)
     );
 }
@@ -370,7 +370,7 @@ footer {
         color: #fff;
         text-decoration: none;
         border-radius: 45px;
-        background: linear-gradient(45deg, #037e18, #057c0b); /* такой же стиль, как соцсети */
+        background: linear-gradient(45deg, #28a745, #218838); /* такой же стиль, как соцсети */
         background-size: 200% 200%;
         animation: gradientMove 6s ease infinite;
         box-shadow: 0 4px 12px rgba(0,0,0,0.25);
