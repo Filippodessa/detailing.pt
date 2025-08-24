@@ -91,58 +91,68 @@ footer {
     margin-right: auto;
 }
 
-/* Общие стили кнопок */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    margin: 10px;
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 16px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    white-space: nowrap; /* чтобы текст не переносился */
-}
-
-/* Эффект при наведении */
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-}
-
-/* Instagram */
-.instagram {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-}
-
-/* Facebook */
-.facebook {
-    background: #1877f2;
-}
-
-/* WhatsApp */
-.whatsapp {
-    background: #25D366;
-}
-
-/* Контейнер для центрирования */
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
-}
-
 /* Адаптив */
 @media (max-width: 600px) {
     .btn {
         font-size: 14px;
         padding: 10px 16px;
     }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.2s, background 0.3s;
+    font-size: 16px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* 🔹 Индивидуальные цвета */
+.btn.instagram {
+    background: #E4405F;
+}
+
+.btn.instagram:hover {
+    background: #c32e4d;
+}
+
+.btn.facebook {
+    background: #1877F2;
+}
+
+.btn.facebook:hover {
+    background: #0f5bb5;
+}
+
+.btn.whatsapp {
+    background: #25D366;
+}
+
+.btn.whatsapp:hover {
+    background: #1ebe57;
+}
+
+.btn.call {
+    background: #28a745;
+}
+
+.btn.call:hover {
+    background: #218838;
 }
