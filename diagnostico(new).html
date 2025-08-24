@@ -92,19 +92,20 @@
     <footer>
         <p>&copy; 2025 Detailing PT. Todos os direitos reservados.</p>
     </footer>
-    <a href="tel:+351923509879" class="btn call">
-        <i class="fas fa-phone"></i> <span class="call-text">Ligar</span>
-    </a>
     
     <script>
     document.addEventListener("scroll", function() {
     const callBtn = document.querySelector(".btn.call");
-        if (window.scrollY > 200) { 
-        callBtn.classList.add("show"); // показать после 200px скролла
+        if (window.scrollY > 100) { 
+        callBtn.classList.add("show"); // показать после 100px скролла
         } else {
         callBtn.classList.remove("show"); // скрыть наверх
         }
     });
     </script>
+
+    <a href="tel:+351923509879" class="btn call">
+        <i class="fas fa-phone"></i> <span class="call-text">Ligar</span>
+    </a>
 </body>
 </html>
